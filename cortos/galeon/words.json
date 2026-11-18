@@ -1,0 +1,746 @@
+[
+ {
+  "word": "En",
+  "start": 0.0,
+  "end": 0.76,
+  "p": 0.998
+ },
+ {
+  "word": "1708",
+  "start": 0.76,
+  "end": 1.58,
+  "p": 0.998
+ },
+ {
+  "word": "se",
+  "start": 1.58,
+  "end": 1.9,
+  "p": 0.988
+ },
+ {
+  "word": "hundió",
+  "start": 1.9,
+  "end": 2.1,
+  "p": 0.999
+ },
+ {
+  "word": "un",
+  "start": 2.1,
+  "end": 2.18,
+  "p": 1.0
+ },
+ {
+  "word": "barco",
+  "start": 2.18,
+  "end": 2.42,
+  "p": 1.0
+ },
+ {
+  "word": "cargado",
+  "start": 2.42,
+  "end": 2.74,
+  "p": 1.0
+ },
+ {
+  "word": "de",
+  "start": 2.74,
+  "end": 2.88,
+  "p": 1.0
+ },
+ {
+  "word": "oro,",
+  "start": 2.88,
+  "end": 3.08,
+  "p": 1.0
+ },
+ {
+  "word": "plata",
+  "start": 3.3,
+  "end": 3.46,
+  "p": 1.0
+ },
+ {
+  "word": "y",
+  "start": 3.46,
+  "end": 3.58,
+  "p": 1.0
+ },
+ {
+  "word": "esmeraldas,",
+  "start": 3.58,
+  "end": 4.1,
+  "p": 1.0
+ },
+ {
+  "word": "y",
+  "start": 4.18,
+  "end": 4.32,
+  "p": 1.0
+ },
+ {
+  "word": "su",
+  "start": 4.32,
+  "end": 4.46,
+  "p": 1.0
+ },
+ {
+  "word": "tesoro",
+  "start": 4.46,
+  "end": 4.84,
+  "p": 1.0
+ },
+ {
+  "word": "lleva",
+  "start": 4.84,
+  "end": 5.32,
+  "p": 0.999
+ },
+ {
+  "word": "más",
+  "start": 5.32,
+  "end": 5.48,
+  "p": 1.0
+ },
+ {
+  "word": "de",
+  "start": 5.48,
+  "end": 5.58,
+  "p": 1.0
+ },
+ {
+  "word": "300",
+  "start": 5.58,
+  "end": 5.82,
+  "p": 0.997
+ },
+ {
+  "word": "años",
+  "start": 5.82,
+  "end": 6.22,
+  "p": 1.0
+ },
+ {
+  "word": "en",
+  "start": 6.22,
+  "end": 6.42,
+  "p": 1.0
+ },
+ {
+  "word": "el",
+  "start": 6.42,
+  "end": 6.5,
+  "p": 1.0
+ },
+ {
+  "word": "fondo",
+  "start": 6.5,
+  "end": 6.74,
+  "p": 1.0
+ },
+ {
+  "word": "del",
+  "start": 6.74,
+  "end": 6.88,
+  "p": 1.0
+ },
+ {
+  "word": "mar.",
+  "start": 6.88,
+  "end": 7.06,
+  "p": 1.0
+ },
+ {
+  "word": "Se",
+  "start": 7.28,
+  "end": 7.54,
+  "p": 1.0
+ },
+ {
+  "word": "llamaba",
+  "start": 7.54,
+  "end": 7.82,
+  "p": 1.0
+ },
+ {
+  "word": "San",
+  "start": 7.82,
+  "end": 7.98,
+  "p": 1.0
+ },
+ {
+  "word": "José,",
+  "start": 7.98,
+  "end": 8.26,
+  "p": 0.999
+ },
+ {
+  "word": "un",
+  "start": 8.5,
+  "end": 8.72,
+  "p": 1.0
+ },
+ {
+  "word": "galeón",
+  "start": 8.72,
+  "end": 9.0,
+  "p": 0.751
+ },
+ {
+  "word": "español",
+  "start": 9.0,
+  "end": 9.3,
+  "p": 0.999
+ },
+ {
+  "word": "que",
+  "start": 9.3,
+  "end": 9.48,
+  "p": 1.0
+ },
+ {
+  "word": "navegaba",
+  "start": 9.48,
+  "end": 9.9,
+  "p": 1.0
+ },
+ {
+  "word": "de",
+  "start": 9.9,
+  "end": 10.06,
+  "p": 1.0
+ },
+ {
+  "word": "Portobelo",
+  "start": 10.06,
+  "end": 10.58,
+  "p": 0.979
+ },
+ {
+  "word": "a",
+  "start": 10.58,
+  "end": 10.8,
+  "p": 1.0
+ },
+ {
+  "word": "Cartagena",
+  "start": 10.8,
+  "end": 11.24,
+  "p": 0.999
+ },
+ {
+  "word": "de",
+  "start": 11.24,
+  "end": 11.38,
+  "p": 1.0
+ },
+ {
+  "word": "Indias,",
+  "start": 11.38,
+  "end": 11.66,
+  "p": 0.998
+ },
+ {
+  "word": "pero",
+  "start": 11.82,
+  "end": 12.16,
+  "p": 1.0
+ },
+ {
+  "word": "frente",
+  "start": 12.16,
+  "end": 12.42,
+  "p": 1.0
+ },
+ {
+  "word": "a",
+  "start": 12.42,
+  "end": 12.5,
+  "p": 1.0
+ },
+ {
+  "word": "Cartagena",
+  "start": 12.5,
+  "end": 13.0,
+  "p": 1.0
+ },
+ {
+  "word": "le",
+  "start": 13.0,
+  "end": 13.28,
+  "p": 0.999
+ },
+ {
+  "word": "esperaban",
+  "start": 13.28,
+  "end": 13.68,
+  "p": 0.999
+ },
+ {
+  "word": "barcos",
+  "start": 13.68,
+  "end": 14.02,
+  "p": 1.0
+ },
+ {
+  "word": "ingleses.",
+  "start": 14.02,
+  "end": 14.52,
+  "p": 1.0
+ },
+ {
+  "word": "Cañonazo",
+  "start": 14.86,
+  "end": 15.24,
+  "p": 0.996
+ },
+ {
+  "word": "va,",
+  "start": 15.24,
+  "end": 15.42,
+  "p": 1.0
+ },
+ {
+  "word": "cañonazo",
+  "start": 15.66,
+  "end": 16.06,
+  "p": 0.999
+ },
+ {
+  "word": "viene,",
+  "start": 16.06,
+  "end": 16.3,
+  "p": 1.0
+ },
+ {
+  "word": "y",
+  "start": 16.5,
+  "end": 16.7,
+  "p": 1.0
+ },
+ {
+  "word": "de",
+  "start": 16.7,
+  "end": 16.8,
+  "p": 1.0
+ },
+ {
+  "word": "repente",
+  "start": 16.8,
+  "end": 17.16,
+  "p": 1.0
+ },
+ {
+  "word": "el",
+  "start": 17.16,
+  "end": 17.66,
+  "p": 0.98
+ },
+ {
+  "word": "San",
+  "start": 17.66,
+  "end": 17.78,
+  "p": 0.998
+ },
+ {
+  "word": "José",
+  "start": 17.78,
+  "end": 18.0,
+  "p": 0.999
+ },
+ {
+  "word": "se",
+  "start": 18.0,
+  "end": 18.18,
+  "p": 1.0
+ },
+ {
+  "word": "hundió.",
+  "start": 18.18,
+  "end": 18.44,
+  "p": 1.0
+ },
+ {
+  "word": "Iban",
+  "start": 18.94,
+  "end": 19.14,
+  "p": 0.998
+ },
+ {
+  "word": "600",
+  "start": 19.14,
+  "end": 19.44,
+  "p": 0.999
+ },
+ {
+  "word": "personas",
+  "start": 19.44,
+  "end": 19.92,
+  "p": 1.0
+ },
+ {
+  "word": "a",
+  "start": 19.92,
+  "end": 20.12,
+  "p": 1.0
+ },
+ {
+  "word": "bordo,",
+  "start": 20.12,
+  "end": 20.3,
+  "p": 1.0
+ },
+ {
+  "word": "solo",
+  "start": 20.56,
+  "end": 20.74,
+  "p": 0.768
+ },
+ {
+  "word": "11",
+  "start": 20.74,
+  "end": 20.9,
+  "p": 0.995
+ },
+ {
+  "word": "sobrevivieron.",
+  "start": 20.9,
+  "end": 21.6,
+  "p": 1.0
+ },
+ {
+  "word": "Durante",
+  "start": 22.02,
+  "end": 22.3,
+  "p": 1.0
+ },
+ {
+  "word": "300",
+  "start": 22.3,
+  "end": 22.58,
+  "p": 1.0
+ },
+ {
+  "word": "años",
+  "start": 22.58,
+  "end": 23.1,
+  "p": 1.0
+ },
+ {
+  "word": "todo",
+  "start": 23.1,
+  "end": 23.5,
+  "p": 0.96
+ },
+ {
+  "word": "el",
+  "start": 23.5,
+  "end": 23.62,
+  "p": 1.0
+ },
+ {
+  "word": "mundo",
+  "start": 23.62,
+  "end": 23.76,
+  "p": 1.0
+ },
+ {
+  "word": "lo",
+  "start": 23.76,
+  "end": 23.86,
+  "p": 1.0
+ },
+ {
+  "word": "buscó,",
+  "start": 23.86,
+  "end": 24.2,
+  "p": 1.0
+ },
+ {
+  "word": "nadie",
+  "start": 24.48,
+  "end": 24.72,
+  "p": 1.0
+ },
+ {
+  "word": "lo",
+  "start": 24.72,
+  "end": 24.84,
+  "p": 1.0
+ },
+ {
+  "word": "encontró.",
+  "start": 24.84,
+  "end": 25.22,
+  "p": 1.0
+ },
+ {
+  "word": "Hasta",
+  "start": 25.22,
+  "end": 26.0,
+  "p": 0.55
+ },
+ {
+  "word": "que",
+  "start": 26.0,
+  "end": 26.12,
+  "p": 1.0
+ },
+ {
+  "word": "en",
+  "start": 26.12,
+  "end": 26.2,
+  "p": 0.999
+ },
+ {
+  "word": "2015",
+  "start": 26.2,
+  "end": 26.68,
+  "p": 0.999
+ },
+ {
+  "word": "Colombia",
+  "start": 26.68,
+  "end": 27.1,
+  "p": 0.946
+ },
+ {
+  "word": "anunció",
+  "start": 27.1,
+  "end": 27.5,
+  "p": 0.997
+ },
+ {
+  "word": "que",
+  "start": 27.5,
+  "end": 27.58,
+  "p": 0.982
+ },
+ {
+  "word": "lo",
+  "start": 27.58,
+  "end": 27.66,
+  "p": 1.0
+ },
+ {
+  "word": "tenía,",
+  "start": 27.66,
+  "end": 27.92,
+  "p": 0.999
+ },
+ {
+  "word": "a",
+  "start": 28.14,
+  "end": 28.3,
+  "p": 1.0
+ },
+ {
+  "word": "600",
+  "start": 28.3,
+  "end": 28.74,
+  "p": 0.998
+ },
+ {
+  "word": "metros",
+  "start": 28.74,
+  "end": 29.06,
+  "p": 0.997
+ },
+ {
+  "word": "de",
+  "start": 29.06,
+  "end": 29.22,
+  "p": 0.998
+ },
+ {
+  "word": "profundidad.",
+  "start": 29.22,
+  "end": 29.74,
+  "p": 1.0
+ },
+ {
+  "word": "Y",
+  "start": 29.96,
+  "end": 30.26,
+  "p": 0.998
+ },
+ {
+  "word": "ahora",
+  "start": 30.26,
+  "end": 30.52,
+  "p": 1.0
+ },
+ {
+  "word": "Colombia,",
+  "start": 30.52,
+  "end": 31.2,
+  "p": 0.791
+ },
+ {
+  "word": "España",
+  "start": 31.36,
+  "end": 31.62,
+  "p": 1.0
+ },
+ {
+  "word": "y",
+  "start": 31.62,
+  "end": 31.76,
+  "p": 1.0
+ },
+ {
+  "word": "una",
+  "start": 31.76,
+  "end": 31.88,
+  "p": 0.999
+ },
+ {
+  "word": "empresa",
+  "start": 31.88,
+  "end": 32.12,
+  "p": 1.0
+ },
+ {
+  "word": "cazatesoros",
+  "start": 32.12,
+  "end": 32.76,
+  "p": 0.915
+ },
+ {
+  "word": "se",
+  "start": 32.76,
+  "end": 32.92,
+  "p": 1.0
+ },
+ {
+  "word": "pelean",
+  "start": 32.92,
+  "end": 33.1,
+  "p": 0.996
+ },
+ {
+  "word": "por",
+  "start": 33.1,
+  "end": 33.26,
+  "p": 1.0
+ },
+ {
+  "word": "él.",
+  "start": 33.26,
+  "end": 33.42,
+  "p": 0.999
+ },
+ {
+  "word": "Y",
+  "start": 33.66,
+  "end": 34.02,
+  "p": 1.0
+ },
+ {
+  "word": "todavía",
+  "start": 34.02,
+  "end": 34.36,
+  "p": 1.0
+ },
+ {
+  "word": "nadie",
+  "start": 34.36,
+  "end": 34.96,
+  "p": 0.994
+ },
+ {
+  "word": "sabe",
+  "start": 34.96,
+  "end": 35.18,
+  "p": 1.0
+ },
+ {
+  "word": "con",
+  "start": 35.18,
+  "end": 35.32,
+  "p": 1.0
+ },
+ {
+  "word": "certeza",
+  "start": 35.32,
+  "end": 35.72,
+  "p": 1.0
+ },
+ {
+  "word": "que",
+  "start": 35.72,
+  "end": 36.04,
+  "p": 0.374
+ },
+ {
+  "word": "lo",
+  "start": 36.04,
+  "end": 36.2,
+  "p": 0.767
+ },
+ {
+  "word": "hundió.",
+  "start": 36.2,
+  "end": 36.46,
+  "p": 0.998
+ },
+ {
+  "word": "El",
+  "start": 36.74,
+  "end": 37.1,
+  "p": 0.999
+ },
+ {
+  "word": "barco",
+  "start": 37.1,
+  "end": 37.4,
+  "p": 1.0
+ },
+ {
+  "word": "que",
+  "start": 37.4,
+  "end": 37.58,
+  "p": 0.996
+ },
+ {
+  "word": "nadie",
+  "start": 37.58,
+  "end": 37.76,
+  "p": 1.0
+ },
+ {
+  "word": "pudo",
+  "start": 37.76,
+  "end": 38.04,
+  "p": 1.0
+ },
+ {
+  "word": "salvar,",
+  "start": 38.04,
+  "end": 38.4,
+  "p": 1.0
+ },
+ {
+  "word": "hoy",
+  "start": 38.64,
+  "end": 39.06,
+  "p": 0.999
+ },
+ {
+  "word": "lo",
+  "start": 39.06,
+  "end": 39.22,
+  "p": 1.0
+ },
+ {
+  "word": "quieren",
+  "start": 39.22,
+  "end": 39.48,
+  "p": 0.999
+ },
+ {
+  "word": "todos.",
+  "start": 39.48,
+  "end": 39.84,
+  "p": 1.0
+ }
+]

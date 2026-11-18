@@ -1,0 +1,14 @@
+Modelos 3D de esta carpeta: "Nature Kit" y 11 modelos del "Fantasy Town Kit" de Kenney (www.kenney.nl)
+(tree-high-round, tree, hedge, lantern, cart, stall-red, stall-green, stall-bench, banner-red, banner-green, windmill,
+y su textura Textures/colormap.png).
+Páginas originales: https://kenney.nl/assets/nature-kit y https://kenney.nl/assets/fantasy-town-kit
+
+Licencia: Creative Commons Zero (CC0), dominio público.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Se pueden usar, copiar, modificar y redistribuir para cualquier fin, también comercial, sin pedir permiso.
+No es obligatorio, pero se agradece el crédito: "Modelos 3D: Kenney (www.kenney.nl)".
+
+El galeón no usa esta carpeta: está aquí como base para cortos que pasan en tierra (árboles, rocas, vallas, tiendas,
+puentes, cultivos...). Ojo: los materiales del Nature Kit vienen en tonos verdeazulados; hay que recolorearlos por
+nombre de material al cargarlos (ver CLAUDE.md).

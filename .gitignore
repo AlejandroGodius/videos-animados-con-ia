@@ -1,0 +1,15 @@
+node_modules/
+.venv/
+.temporales/
+salida/
+audio/*/_cache/
+__pycache__/
+*.pyc
+.env
+.env.*
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+public/*/voice-antes-de-editar.wav
+public/*/voice-limpia-entera.wav

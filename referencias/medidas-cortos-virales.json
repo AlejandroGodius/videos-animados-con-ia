@@ -1,0 +1,282 @@
+{
+ "que_es": "Medidas de 20 cortos virales del estilo 'personajes 2D planos en un mundo 3D con líneas de tinta'. Solo hay números: los fotogramas originales son de un canal de terceros y no se incluyen ni se nombran.",
+ "fecha": "2026-11-18",
+ "como_se_midio": {
+  "material": "1200 miniaturas (60 por corto, 20 cortos) para el color y 38 fotogramas completos de 540x960 para las líneas de tinta.",
+  "metodo": "herramientas/medidas.py: imagen a 540x960, franja de subtítulos (55-80 % del alto) tapada, mismas medidas que aplica herramientas/comparar-con-virales.py a tus fotogramas.",
+  "por_fotograma": "Reparto de cada medida entre fotogramas sueltos (p10 = el 10 % más bajo, p90 = el 10 % más alto). Sirve para juzgar una escena suelta: fuera de p10-p90 es raro.",
+  "por_corto": "Reparto de la mediana de cada corto. Sirve para juzgar el corto entero: la mediana de tus escenas debería caer entre p10 y p90."
+ },
+ "descripcion": {
+  "brillo_medio": "Brillo medio de la imagen (0 = negro, 1 = blanco).",
+  "contraste": "Contraste: cuánto se separan claros y oscuros (desviación del brillo).",
+  "negros_p2": "Lo oscuro de verdad: brillo del 2 % más oscuro de la imagen.",
+  "blancos_p98": "Lo claro de verdad: brillo del 2 % más claro de la imagen.",
+  "saturacion": "Saturación media (lo vivos que son los colores).",
+  "croma_p90": "Fuerza de los colores más intensos (croma CIELab, percentil 90).",
+  "colorido": "Colorido general (índice de Hasler y Süsstrunk).",
+  "lineas_densidad": "Parte de la imagen ocupada por líneas de tinta finas y oscuras (en %).",
+  "lineas_grosor_1080": "Grosor típico de esas líneas, en píxeles de un vídeo de 1080 de ancho.",
+  "arriba_vs_abajo": "Brillo del tercio de arriba dividido por el del cuarto de abajo (cielo claro sobre suelo más oscuro > 1).",
+  "cielo_azul": "Parte del tercio de arriba que es azul cielo (en %).",
+  "sombras_azuladas": "Color de las sombras: azul menos rojo (positivo = sombras azuladas/violetas, negativo = marrones).",
+  "luces_calidas": "Color de las luces: rojo menos azul (positivo = luces cálidas)."
+ },
+ "por_fotograma": {
+  "brillo_medio": {
+   "n": 1200,
+   "p10": 0.2423,
+   "p25": 0.3211,
+   "mediana": 0.4542,
+   "p75": 0.581,
+   "p90": 0.6656
+  },
+  "contraste": {
+   "n": 1200,
+   "p10": 0.1328,
+   "p25": 0.1689,
+   "mediana": 0.1976,
+   "p75": 0.2298,
+   "p90": 0.2673
+  },
+  "negros_p2": {
+   "n": 1200,
+   "p10": 0.0383,
+   "p25": 0.0708,
+   "mediana": 0.1154,
+   "p75": 0.1749,
+   "p90": 0.2437
+  },
+  "blancos_p98": {
+   "n": 1200,
+   "p10": 0.6901,
+   "p25": 0.8076,
+   "mediana": 0.907,
+   "p75": 0.9615,
+   "p90": 0.987
+  },
+  "saturacion": {
+   "n": 1200,
+   "p10": 0.2998,
+   "p25": 0.361,
+   "mediana": 0.4516,
+   "p75": 0.5564,
+   "p90": 0.6378
+  },
+  "croma_p90": {
+   "n": 1200,
+   "p10": 28.5279,
+   "p25": 36.5623,
+   "mediana": 46.9839,
+   "p75": 59.8778,
+   "p90": 72.5659
+  },
+  "colorido": {
+   "n": 1200,
+   "p10": 40.1239,
+   "p25": 51.1999,
+   "mediana": 64.7276,
+   "p75": 79.2688,
+   "p90": 92.0993
+  },
+  "lineas_densidad": {
+   "n": 38,
+   "p10": 0.8853,
+   "p25": 1.0345,
+   "mediana": 1.6441,
+   "p75": 3.4273,
+   "p90": 4.2135
+  },
+  "lineas_grosor_1080": {
+   "n": 38,
+   "p10": 3.0,
+   "p25": 4.0,
+   "mediana": 4.0,
+   "p75": 5.0,
+   "p90": 5.3
+  },
+  "arriba_vs_abajo": {
+   "n": 1200,
+   "p10": 0.6639,
+   "p25": 0.9328,
+   "mediana": 1.2476,
+   "p75": 1.7084,
+   "p90": 2.4104
+  },
+  "cielo_azul": {
+   "n": 1200,
+   "p10": 0.0,
+   "p25": 0.0,
+   "mediana": 0.6221,
+   "p75": 22.7532,
+   "p90": 63.8611
+  },
+  "sombras_azuladas": {
+   "n": 1200,
+   "p10": -71.7378,
+   "p25": -47.9668,
+   "mediana": -15.9053,
+   "p75": 25.9254,
+   "p90": 73.6756
+  },
+  "luces_calidas": {
+   "n": 1200,
+   "p10": -36.6917,
+   "p25": -1.6337,
+   "mediana": 29.7911,
+   "p75": 55.7387,
+   "p90": 88.9066
+  }
+ },
+ "por_corto": {
+  "brillo_medio": {
+   "n": 20,
+   "p10": 0.2968,
+   "p25": 0.3717,
+   "mediana": 0.4443,
+   "p75": 0.5457,
+   "p90": 0.5776
+  },
+  "contraste": {
+   "n": 20,
+   "p10": 0.1728,
+   "p25": 0.1893,
+   "mediana": 0.1982,
+   "p75": 0.2161,
+   "p90": 0.2264
+  },
+  "negros_p2": {
+   "n": 20,
+   "p10": 0.0534,
+   "p25": 0.0772,
+   "mediana": 0.1178,
+   "p75": 0.1417,
+   "p90": 0.1843
+  },
+  "blancos_p98": {
+   "n": 20,
+   "p10": 0.8312,
+   "p25": 0.8676,
+   "mediana": 0.9146,
+   "p75": 0.9424,
+   "p90": 0.9674
+  },
+  "saturacion": {
+   "n": 20,
+   "p10": 0.3836,
+   "p25": 0.4032,
+   "mediana": 0.4372,
+   "p75": 0.4785,
+   "p90": 0.5524
+  },
+  "croma_p90": {
+   "n": 20,
+   "p10": 38.8264,
+   "p25": 42.4211,
+   "mediana": 46.4853,
+   "p75": 57.138,
+   "p90": 60.4355
+  },
+  "colorido": {
+   "n": 20,
+   "p10": 54.9087,
+   "p25": 59.5188,
+   "mediana": 66.3147,
+   "p75": 73.0344,
+   "p90": 80.4413
+  },
+  "lineas_densidad": {
+   "n": 20,
+   "p10": 1.0093,
+   "p25": 1.4142,
+   "mediana": 2.247,
+   "p75": 2.8535,
+   "p90": 3.5173
+  },
+  "lineas_grosor_1080": {
+   "n": 20,
+   "p10": 3.5,
+   "p25": 4.0,
+   "mediana": 4.5,
+   "p75": 5.0,
+   "p90": 5.55
+  },
+  "arriba_vs_abajo": {
+   "n": 20,
+   "p10": 0.9336,
+   "p25": 1.0905,
+   "mediana": 1.2554,
+   "p75": 1.3211,
+   "p90": 1.6528
+  },
+  "cielo_azul": {
+   "n": 20,
+   "p10": 0.0,
+   "p25": 0.0,
+   "mediana": 2.5752,
+   "p75": 9.7302,
+   "p90": 15.6638
+  },
+  "sombras_azuladas": {
+   "n": 20,
+   "p10": -52.7714,
+   "p25": -33.3232,
+   "mediana": -13.127,
+   "p75": 15.445,
+   "p90": 33.1064
+  },
+  "luces_calidas": {
+   "n": 20,
+   "p10": 0.6538,
+   "p25": 7.9315,
+   "mediana": 25.2071,
+   "p75": 43.4713,
+   "p90": 49.1351
+  }
+ },
+ "galeon_nuestro_mediana": {
+  "brillo_medio": 0.4998,
+  "contraste": 0.1801,
+  "negros_p2": 0.1613,
+  "blancos_p98": 0.8436,
+  "saturacion": 0.5948,
+  "croma_p90": 48.6559,
+  "colorido": 101.1582,
+  "lineas_densidad": 1.2523,
+  "lineas_grosor_1080": 4.0,
+  "arriba_vs_abajo": 1.4,
+  "cielo_azul": 0.1331,
+  "sombras_azuladas": 25.2342,
+  "luces_calidas": 88.5607
+ },
+ "personaje_en_cuadro": {
+  "metodo": "Estimación visual con regla (marcas cada 5 % del alto) sobre los 38 fotogramas completos. No es medida automática.",
+  "fotogramas_con_personaje": 27,
+  "fotogramas_sin_personaje_claro": 11,
+  "altura_cabeza_en_porcentaje_del_alto": {
+   "p25": 10,
+   "mediana": 15,
+   "p75": 20
+  },
+  "tipos_de_plano": {
+   "general (cabeza de 8 % o menos)": 5,
+   "medio (cabeza 9-24 %)": 18,
+   "primer plano (cabeza 25 % o más)": 4
+  },
+  "lectura": "El personaje principal suele tener la cabeza en torno al 15 % del alto de la pantalla; con 3,5 cabezas de alto, el cuerpo entero ocupa más o menos la mitad de la pantalla. Casi 1 de cada 3 fotogramas no tiene personaje: son objetos de la historia en primer plano (carteles, billetes, máquinas) o planos generales."
+ },
+ "otros_datos": {
+  "nota": "Datos de la guía de estilo y los informes de la skill original (Mr omi, MIT), medidos por su autor sobre los mismos 20 cortos. Están en inglés en el original; aquí resumidos.",
+  "formato": "Vertical 1080x1920, 30 fps, 31-78 s (mediana ~60 s). La voz empieza en el fotograma 1-4: sin intro, sin logo, sin despedida.",
+  "voz": "3,5-4,1 palabras por segundo (mediana 3,7, en inglés). Casi sin pausas: los huecos de más de 0,25 s suman menos de 1 s por vídeo.",
+  "sonido": "-14 LUFS integrados, rango de sonoridad ~2,4 LU. Música y efectos solo 5-10 dB por debajo de la voz.",
+  "subtitulos": "Una palabra (a veces 2-3) cada vez, blanca, gruesa, con borde negro fino, en la parte media-baja, cambio seco en cada palabra.",
+  "guion": "20 de 20 siguen la fórmula: 1) gancho = paradoja contada como hecho, en la primera frase, sin presentación (10-16 palabras); 2) situación en 1-2 frases con detalles concretos; 3) escalada en 3-6 pasos; 4) un momento de misterio o pregunta; 5) giro con la explicación real, a menudo con una comparación cotidiana; 6) remate irónico en las 1-2 últimas frases: el vídeo acaba en la última palabra. Frases de ~13,5 palabras de mediana.",
+  "tinta_mundo": "Líneas del mundo 3D de ~3 px a 1080 de ancho (mediana 3,09 px en saltos de profundidad, 3,04 en siluetas contra el cielo, 2,17 en pliegues), casi negras, del mismo grosor cerca y lejos. Sin línea en uniones pared-suelo ni en el horizonte del mar.",
+  "tinta_personajes": "Contorno de personajes de ~4,6 px a 1080, color ciruela oscuro (#201628-#2f1d28), más grueso abajo y en el lado de sombra.",
+  "personajes": "Unas 3,5 cabezas de alto, piernas de una sola línea, cabeza en forma de judía (alto/ancho ~0,93), caras claras (brillo ~0,93), sin coloretes ni brillos en los ojos. Parpadeo cada 0,5-2,3 s.",
+  "camara": "Casi nunca quieta: el 65 % de los fotogramas se mueve; en los momentos quietos sigue acercándose despacio (0,14 %/fotograma de mediana). Cortes secos solo en saltos grandes; movimientos suaves de 18-40 fotogramas; sacudidas en los impactos.",
+  "profundidad": "Fondo desenfocado en ~1/3 del tiempo (primeros planos y planos medios); los planos generales, nítidos.",
+  "color_guia": "Medianas por vídeo: brillo medio 0,43-0,54, desviación 0,21-0,29, colores muy saturados. Luz cálida y sombras azul-violeta; al atardecer, horizonte melocotón y sombras violetas, nunca marrones."
+ }
+}
