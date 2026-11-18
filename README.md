@@ -188,7 +188,7 @@ Probado en Windows 11; en Mac no lo hemos podido probar, la skill original naci�
 
 ## Licencia
 
-- El código y la documentación son MIT (ver [LICENSE](LICENSE)).
+- El código y la documentación son MIT (ver [LICENSE](LICENSE)). Lo que no es nuestro, en [LICENCIAS-DE-TERCEROS.md](LICENCIAS-DE-TERCEROS.md).
 - **Remotion**, el programa que convierte el código en vídeo, tiene su propia licencia: es gratis para particulares y
   empresas de hasta 3 personas; las empresas más grandes necesitan una licencia de empresa de Remotion. Compruébalo en
   [remotion.dev/license](https://www.remotion.dev/license).
