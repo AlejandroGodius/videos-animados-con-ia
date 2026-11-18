@@ -92,7 +92,7 @@ if (conRender && !problemas.some((p) => /node_modules|Versiones/.test(p))) {
       return null;
     }
   };
-  const esCubo = (s) => s && s.centro[0] > 140 && s.centro[1] < 130 && s.centro[2] < 130;
+  const esCubo = (s) => s && s.centro[0] > 70 && s.centro[0] > s.centro[1] + 50 && s.centro[0] > s.centro[2] + 50; // centro rojo (la cara del cubo)
   const cubo = await foto("Diagnostico3D", 10, {}, "cubo.jpg");
   const cuboFx = await foto("Diagnostico3D", 10, { efectos: true }, "cubo-con-efectos.jpg");
   const galeon = await foto("GaleonShort", 400, { audio: false }, "galeon.jpg");

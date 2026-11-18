@@ -189,7 +189,12 @@ def transcribir(ruta_wav):
     print(f"Transcribiendo con el modelo {modelo} (la primera vez se descarga: unos 1,6 GB)...", flush=True)
     t0 = time.time()
     m = WhisperModel(modelo, device="cpu", compute_type="int8")
-    segs, info = m.transcribe(ruta_wav, language="es", word_timestamps=True, beam_size=5, vad_filter=False)
+    # el audio se decodifica con ffmpeg (16 kHz, mono) y se le pasa como números: así no dependemos de PyAV,
+    # cuya versión 19 rompe la lectura de archivos de faster-whisper 1.2.1 (probado el 18-nov-2026)
+    r = subprocess.run([ffmpeg(), "-v", "error", "-i", ruta_wav, "-ac", "1", "-ar", "16000", "-f", "f32le", "-"], capture_output=True)
+    audio = np.frombuffer(r.stdout, dtype=np.float32)
+    segs, info = m.transcribe(audio, language="es", word_timestamps=True, beam_size=5, vad_filter=False,
+                              initial_prompt="Narración en español, con puntos, comas y tildes.")
     palabras = []
     for s in segs:
         for w in s.words or []:
@@ -197,7 +202,60 @@ def transcribir(ruta_wav):
             if txt:
                 palabras.append({"word": txt, "start": round(w.start, 3), "end": round(w.end, 3), "p": round(w.probability, 3)})
     print(f"Transcrito en {time.time() - t0:.0f} s: {len(palabras)} palabras.", flush=True)
-    return palabras
+    x = audio.astype(np.float32)
+    return afinar(palabras, x, 16000)
+
+
+def afinar(palabras, x, sr):
+    """Whisper suele pegar el silencio de una pausa al principio de la palabra siguiente (o al final de la anterior).
+    Se corrige con la energía de la voz: cada palabra empieza donde de verdad empieza a sonar y acaba donde deja de sonar."""
+    suena = sonido(x, sr)
+    n = len(suena)
+    if n < 10 or not palabras:
+        return palabras
+    out = []
+    for w in palabras:
+        a, b = int(w["start"] * 100), min(int(w["end"] * 100), n)
+        w = dict(w)
+        if b - a > 25:  # palabra de más de 0,25 s: puede llevar silencio pegado
+            idx = np.flatnonzero(suena[a:b])
+            if idx.size:
+                ini, fin = a + idx[0], a + idx[-1]
+                if ini - a > 4:
+                    w["start"] = round(max(w["start"], ini / 100 - 0.02), 3)
+                if b - fin > 6 and fin / 100 + 0.04 > w["start"] + 0.08:
+                    w["end"] = round(fin / 100 + 0.04, 3)
+        out.append(w)
+    return out
+
+
+def sonido(x, sr):
+    """True cada 10 ms donde hay voz (por encima del ruido de fondo; las respiraciones cuentan como silencio)"""
+    hop = int(0.01 * sr)
+    n = len(x) // hop
+    if n < 1:
+        return np.zeros(0, bool)
+    rms = np.sqrt(np.mean(x[: n * hop].reshape(n, hop) ** 2, axis=1) + 1e-12)
+    db = 20 * np.log10(rms)
+    suelo, alto = np.percentile(db, 10), np.percentile(db, 95)
+    return db > min(suelo + 15, alto - 25)
+
+
+def silencios(x, sr, minimo=0.25):
+    """tramos [ini, fin] en segundos sin voz de al menos `minimo`, sin contar el principio ni el final del archivo"""
+    suena = sonido(x, sr)
+    out, i, n = [], 0, len(suena)
+    while i < n:
+        if not suena[i]:
+            j = i
+            while j < n and not suena[j]:
+                j += 1
+            if i > 0 and j < n and (j - i) / 100 >= minimo:
+                out.append((i / 100, j / 100))
+            i = j
+        else:
+            i += 1
+    return out
 
 
 # ------------------------------------------------------------------ análisis
@@ -216,39 +274,45 @@ def leer_guion(corto):
     return m.group(1).strip() if m else None
 
 
-def informe(corto, palabras):
+def informe(corto, palabras, sil=None):
     if not palabras:
         print("No se ha entendido ninguna palabra. ¿Es la grabación correcta?")
         return {}
     dur = palabras[-1]["end"] - palabras[0]["start"]
     pps = len(palabras) / max(dur, 0.1)
-    huecos = [(palabras[i]["end"], palabras[i + 1]["start"]) for i in range(len(palabras) - 1)
-              if palabras[i + 1]["start"] - palabras[i]["end"] > 0.35]
-    total_huecos = sum(b - a for a, b in huecos)
+    if sil is None:  # sin audio: huecos entre palabras
+        sil = [(palabras[i]["end"], palabras[i + 1]["start"]) for i in range(len(palabras) - 1)
+               if palabras[i + 1]["start"] - palabras[i]["end"] >= 0.25]
+    total = sum(b - a for a, b in sil)
+    huecos = [(a, b) for a, b in sil if b - a > 0.6]
     print("\nINFORME DE LA VOZ")
     print(f"  Duración hablada: {dur:.1f} s ({round(dur * FPS)} fotogramas a 30 fps)")
     print(f"  Palabras: {len(palabras)}  ->  {pps:.1f} palabras por segundo "
           f"(los virales medidos van a 3,5-4,1 en inglés; la voz del galeón, a 3,1)")
-    print(f"  Pausas de más de 0,35 s: {len(huecos)}, suman {total_huecos:.1f} s "
-          f"(en los virales, las pausas de más de 0,25 s suman menos de 1 s)")
+    largos = [1 for a, b in sil if b - a > 0.5]
+    print(f"  Silencios de 0,25 s o más (respiraciones incluidas): {len(sil)}, suman {total:.1f} s "
+          f"(la voz del galeón: 19 que suman 6,8 s)")
+    if largos:
+        print(f"  Hay {len(largos)} silencio(s) de más de 0,5 s: acortarlos da ritmo (python herramientas/voz.py apretar <corto>)")
     for a, b in huecos:
-        if b - a > 0.6:
-            print(f"    pausa larga {a:.2f}-{b:.2f} s ({b - a:.2f} s)")
-    # repeticiones: el mismo trozo de 3 palabras dicho dos veces en menos de 20 s
+        print(f"    pausa larga {a:.2f}-{b:.2f} s ({b - a:.2f} s)")
+    # repeticiones: el mismo trozo de 3 palabras dicho dos veces en menos de 8 s (un tropiezo se repite enseguida)
     n = [norm(w["word"]) for w in palabras]
     vistos, repes = {}, []
     for i in range(len(n) - 2):
         k = " ".join(n[i:i + 3])
-        if k in vistos and palabras[i]["start"] - palabras[vistos[k]]["start"] < 20:
+        if k in vistos and palabras[i]["start"] - palabras[vistos[k]]["start"] < 8:
             j = vistos[k]
             repes.append((j, i))
         vistos[k] = i
     propuestas = []
+    pares = set(repes)
     for j, i in repes:
+        if (j - 1, i - 1) in pares:
+            continue  # es la continuación de un tropiezo ya apuntado
         a, b = palabras[j]["start"], palabras[i]["start"]
         frase = " ".join(w["word"] for w in palabras[j:j + 3])
-        if not any(abs(a - p[0]) < 0.5 for p in propuestas):
-            propuestas.append((round(max(0, a - 0.05), 2), round(b - 0.05, 2), frase))
+        propuestas.append((round(max(0, a - 0.05), 2), round(b - 0.05, 2), frase))
     if propuestas:
         print("  Posibles repeticiones (te trabaste y repetiste la frase):")
         for a, b, frase in propuestas:
@@ -280,7 +344,9 @@ def guardar(corto, palabras):
     os.makedirs(dcorto, exist_ok=True)
     with open(os.path.join(dcorto, "words.json"), "w", encoding="utf-8") as fh:
         json.dump(palabras, fh, ensure_ascii=False, indent=1)
-    inf = informe(corto, palabras)
+    voz = os.path.join(RAIZ, "public", corto, "voice.wav")
+    sil = silencios(*leer_wav(voz)) if os.path.isfile(voz) else None
+    inf = informe(corto, palabras, sil)
     with open(os.path.join(dcorto, "voz-informe.json"), "w", encoding="utf-8") as fh:
         json.dump(inf, fh, ensure_ascii=False, indent=1)
     print(f"\nTiempos por palabra en cortos/{corto}/words.json")
@@ -333,12 +399,15 @@ def cortar(corto, tramos_txt):
 
 
 def apretar(corto, pmax=0.30, pmax_fin=0.50):
+    # solo se acortan silencios de verdad, medidos en el audio: nunca se corta voz
     ruta = os.path.join(RAIZ, "public", corto, "voice.wav")
     pal = json.load(open(os.path.join(RAIZ, "cortos", corto, "words.json"), encoding="utf-8"))
+    x, sr = leer_wav(ruta)
     tramos = []
-    for i in range(len(pal) - 1):
-        a, b = pal[i]["end"], pal[i + 1]["start"]
-        lim = pmax_fin if pal[i]["word"].rstrip()[-1:] in ".?!;:" else pmax
+    for a, b in silencios(x, sr, minimo=min(pmax, pmax_fin)):
+        antes = [w for w in pal if w["end"] <= a + 0.15]
+        fin_frase = bool(antes) and antes[-1]["word"].rstrip()[-1:] in ".?!;:"
+        lim = pmax_fin if fin_frase else pmax
         if b - a > lim:
             mitad = (a + b) / 2
             tramos.append((round(mitad - (b - a - lim) / 2, 3), round(mitad + (b - a - lim) / 2, 3)))
@@ -346,7 +415,6 @@ def apretar(corto, pmax=0.30, pmax_fin=0.50):
         print("No hay pausas que acortar.")
         return
     copia_de_seguridad(ruta)
-    x, sr = leer_wav(ruta)
     escribir_wav(ruta, quitar_tramos(x, sr, tramos), sr)
     print(f"Acortadas {len(tramos)} pausas: {sum(b - a for a, b in tramos):.2f} s menos.")
     guardar(corto, mover_tiempos(pal, tramos))

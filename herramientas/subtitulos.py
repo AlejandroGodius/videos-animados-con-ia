@@ -64,11 +64,15 @@ def main(corto, mayus=False):
         sm = difflib.SequenceMatcher(a=[norm(t) for t in g], b=[norm(t) for t in textos], autojunk=False)
         cambios = 0
         for op, a1, a2, b1, b2 in sm.get_opcodes():
-            if op == "equal":
+            if op == "equal" or (op == "replace" and a2 - a1 == b2 - b1):
                 for k in range(a2 - a1):
-                    if textos[b1 + k] != g[a1 + k]:
+                    gk, tk = g[a1 + k], textos[b1 + k]
+                    # en los cambios, solo si se parecen (p. ej. «galleón» -> «galeón»), nunca otra palabra distinta
+                    if op == "replace" and difflib.SequenceMatcher(a=norm(gk), b=norm(tk)).ratio() < 0.75:
+                        continue
+                    if tk != gk:
                         cambios += 1
-                    textos[b1 + k] = g[a1 + k]
+                    textos[b1 + k] = gk
         print(f"Escritura tomada del guion: {cambios} palabras corregidas.")
     lineas = [CABECERA]
     for i, w in enumerate(pal):
