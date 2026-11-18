@@ -214,7 +214,7 @@ un canal de terceros. Nunca nombres ese canal.
    historia. Eso míralo en la imagen. Ojo: el propio galeón sale más saturado y colorido que la media de los virales
    (es un corto de mar caribeño); fuera de rango no siempre es malo si es una decisión.
 
-## «Haz el vídeo final, con música y subtítulos.»
+## «Haz el vídeo final con música y subtítulos.»
 
 1. Comprueba que la voz y los tiempos están cerrados. Cualquier cambio de tiempos después obliga a rehacer el sonido.
 2. **Música y efectos** (todo sintetizado aquí, sin derechos de terceros):

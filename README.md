@@ -15,6 +15,12 @@ Instagram. Todo es código que se ejecuta en tu ordenador: no hay ningún genera
 Ejemplo incluido: «El galeón San José (1708)», 42 segundos, 11 escenas, voz grabada con la Grabadora de sonido de
 Windows en una sola toma.
 
+**Lo único que necesitas:** tu ordenador (Windows o Mac) y [Claude Code](https://claude.com/claude-code), que va con tu
+plan de Claude. Todo lo demás lo instala él. Para empezar, copia la frase 1 de «Las frases» y pégasela.
+
+**Guía completa paso a paso y ayuda si te atascas:** en el grupo gratis de WhatsApp «IA para tu Negocio»:
+https://chat.whatsapp.com/Fa2MQqxJgWc6cplQSNRxl8
+
 ---
 
 ## Instrucciones para Claude Code
@@ -88,7 +94,7 @@ Copia cada frase y pégasela a Claude Code. En la primera, cambia el enlace por 
 **1. Instalarlo**
 
 ```
-Crea una carpeta en mi escritorio, instálame ahí el proyecto de cortos animados de este enlace, y déjalo listo para usar: https://github.com/AlejandroGodius/videos-animados-con-ia
+Crea una carpeta en mi escritorio e instálame ahí el proyecto de cortos animados desde este enlace y déjalo listo para usar: https://github.com/AlejandroGodius/videos-animados-con-ia
 ```
 
 Si te pregunta algo, léelo y dile que sí. Te irá avisando de cada cosa que instala.
@@ -147,7 +153,7 @@ cielo, tamaño del personaje), te dice qué falla y lo corrige.
 **6. El vídeo final**
 
 ```
-Haz el vídeo final, con música y subtítulos.
+Haz el vídeo final con música y subtítulos.
 ```
 
 ```
